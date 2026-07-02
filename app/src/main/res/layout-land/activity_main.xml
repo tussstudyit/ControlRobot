@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dashboard"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/mainDeck"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="56dp"
+        android:paddingTop="12dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/panel_surface"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="DRIVE CONTROL"
+                        android:textColor="@color/text_main"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="Hold to move, release to stop"
+                        android:textColor="@color/text_muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/statusChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/chip_idle"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
+                    android:text="IDLE"
+                    android:textColor="@color/amber"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:columnCount="3"
+                android:rowCount="3"
+                android:useDefaultMargins="false">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1" />
+
+                <Button
+                    android:id="@+id/forwardButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/btn_drive"
+                    android:drawableTop="@drawable/ic_arrow_up"
+                    android:gravity="center"
+                    android:letterSpacing="0"
+                    android:paddingTop="10dp"
+                    android:text="FORWARD"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1" />
+
+                <Button
+                    android:id="@+id/leftButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/btn_drive"
+                    android:drawableTop="@drawable/ic_arrow_left"
+                    android:gravity="center"
+                    android:letterSpacing="0"
+                    android:paddingTop="10dp"
+                    android:text="LEFT"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/stopButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/btn_stop"
+                    android:drawableTop="@drawable/ic_stop"
+                    android:gravity="center"
+                    android:letterSpacing="0"
+                    android:paddingTop="11dp"
+                    android:text="STOP"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/rightButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/btn_drive"
+                    android:drawableTop="@drawable/ic_arrow_right"
+                    android:gravity="center"
+                    android:letterSpacing="0"
+                    android:paddingTop="10dp"
+                    android:text="RIGHT"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="2"
+                    android:layout_rowWeight="1" />
+
+                <Button
+                    android:id="@+id/backwardButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="2"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/btn_drive"
+                    android:drawableTop="@drawable/ic_arrow_down"
+                    android:gravity="center"
+                    android:letterSpacing="0"
+                    android:paddingTop="10dp"
+                    android:text="BACK"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:layout_row="2"
+                    android:layout_rowWeight="1" />
+            </GridLayout>
+
+            <Button
+                android:id="@+id/emergencyStopButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_stop"
+                android:drawableLeft="@drawable/ic_stop"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:letterSpacing="0"
+                android:text="EMERGENCY STOP"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.18"
+            android:background="@drawable/panel_surface"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="5 DOF ARM"
+                        android:textColor="@color/text_main"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="Saved angles, sent only when adjusted"
+                        android:textColor="@color/text_muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/armCenterButton"
+                    android:layout_width="82dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/btn_secondary"
+                    android:letterSpacing="0"
+                    android:text="CENTER"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/armTestButton"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/btn_primary"
+                    android:letterSpacing="0"
+                    android:text="TEST"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/metric_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="BASE"
+                        android:textColor="@color/text_main"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/servoBaseSeek"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:max="180"
+                        android:progress="90"
+                        android:progressDrawable="@drawable/seekbar_progress"
+                        android:thumb="@drawable/seekbar_thumb" />
+
+                    <TextView
+                        android:id="@+id/servoBaseValue"
+                        android:layout_width="54dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="90"
+                        android:textColor="@color/cyan"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/metric_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="SHOULDER x2"
+                        android:textColor="@color/text_main"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/servoShoulderSeek"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:max="180"
+                        android:progress="90"
+                        android:progressDrawable="@drawable/seekbar_progress"
+                        android:thumb="@drawable/seekbar_thumb" />
+
+                    <TextView
+                        android:id="@+id/servoShoulderValue"
+                        android:layout_width="54dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="90"
+                        android:textColor="@color/cyan"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/metric_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="ELBOW"
+                        android:textColor="@color/text_main"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/servoElbowSeek"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:max="180"
+                        android:progress="90"
+                        android:progressDrawable="@drawable/seekbar_progress"
+                        android:thumb="@drawable/seekbar_thumb" />
+
+                    <TextView
+                        android:id="@+id/servoElbowValue"
+                        android:layout_width="54dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="90"
+                        android:textColor="@color/cyan"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/metric_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="WRIST"
+                        android:textColor="@color/text_main"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/servoWristSeek"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:max="180"
+                        android:progress="90"
+                        android:progressDrawable="@drawable/seekbar_progress"
+                        android:thumb="@drawable/seekbar_thumb" />
+
+                    <TextView
+                        android:id="@+id/servoWristValue"
+                        android:layout_width="54dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="90"
+                        android:textColor="@color/cyan"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/metric_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="GRIP"
+                        android:textColor="@color/text_main"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/servoGripSeek"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:max="180"
+                        android:progress="90"
+                        android:progressDrawable="@drawable/seekbar_progress"
+                        android:thumb="@drawable/seekbar_thumb" />
+
+                    <TextView
+                        android:id="@+id/servoGripValue"
+                        android:layout_width="54dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0"
+                        android:text="90"
+                        android:textColor="@color/cyan"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/connectionDrawer"
+        android:layout_width="326dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="@drawable/panel_surface"
+        android:elevation="12dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="14dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/panel_surface_alt"
+                android:contentDescription="@null"
+                android:padding="9dp"
+                android:src="@drawable/ic_bluetooth" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
+                    android:text="BLUETOOTH"
+                    android:textColor="@color/text_main"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
+                    android:text="ESP32_ROBOT link"
+                    android:textColor="@color/text_muted"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/deviceSpinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/panel_surface_alt"
+                android:popupBackground="@color/panel" />
+
+            <ImageButton
+                android:id="@+id/refreshButton"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/btn_secondary"
+                android:contentDescription="Refresh"
+                android:padding="12dp"
+                android:src="@drawable/ic_refresh" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/connectButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_primary"
+                android:letterSpacing="0"
+                android:text="CONNECT"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/disconnectButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_secondary"
+                android:letterSpacing="0"
+                android:text="DISCONNECT"
+                android:textAllCaps="false"
+                android:textColor="@color/text_main"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginTop="10dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/metric_box"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
+                    android:text="LINK"
+                    android:textColor="@color/text_muted"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/linkMetric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
+                    android:maxLines="1"
+                    android:text="Standby"
+                    android:textColor="@color/amber"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/metric_box"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
+                    android:text="CMD"
+                    android:textColor="@color/text_muted"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lastCommandMetric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
+                    android:maxLines="1"
+                    android:text="S"
+                    android:textColor="@color/cyan"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/metric_box"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:text="DEVICE"
+                android:textColor="@color/text_muted"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/deviceMetric"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:maxLines="1"
+                android:text="ESP32_ROBOT"
+                android:textColor="@color/text_main"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/logText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/panel_surface_alt"
+            android:gravity="bottom"
+            android:letterSpacing="0"
+            android:padding="12dp"
+            android:text="Waiting for paired Bluetooth device..."
+            android:textColor="@color/text_muted"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/drawerToggleButton"
+        android:layout_width="46dp"
+        android:layout_height="82dp"
+        android:layout_gravity="left|center_vertical"
+        android:background="@drawable/btn_drawer_tab"
+        android:contentDescription="Bluetooth panel"
+        android:elevation="16dp"
+        android:padding="11dp"
+        android:src="@drawable/ic_chevron_right" />
+</FrameLayout>

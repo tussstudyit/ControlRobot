@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#FF071018</color>
+    <color name="panel">#FF111C28</color>
+    <color name="panel_alt">#FF162536</color>
+    <color name="panel_stroke">#FF28445D</color>
+    <color name="text_main">#FFF3F7FA</color>
+    <color name="text_muted">#FF93A9B9</color>
+    <color name="cyan">#FF26D6FF</color>
+    <color name="cyan_dark">#FF0E7D9E</color>
+    <color name="green">#FF38E08D</color>
+    <color name="red">#FFFF4D66</color>
+    <color name="amber">#FFFFC857</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
